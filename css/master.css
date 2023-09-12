@@ -1,0 +1,428 @@
+/* Start Variables */
+:root {
+  --primary-color: #2c3855;
+  --primary-color-dark: #435681;
+  --text-dark: #333333;
+  --text-light: #767268;
+  --extra-light: #f3f4f6;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+/* End Variables */
+
+/* Start Global rules */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+/* End Global rules */
+
+/* Start Header */
+header .contianer {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px 0 40px;
+  position: relative;
+}
+header .contianer h2 {
+  color: var(--text-dark);
+}
+header .contianer ul {
+  display: flex;
+  justify-content: end;
+  flex-basis: 70%;
+  transition: 0.3s;
+}
+@media (max-width: 767px) {
+  header .contianer ul {
+    display: none;
+  }
+}
+header .contianer ul li {
+  margin: 0 20px;
+}
+header .contianer ul li a {
+  color: var(--text-light);
+  font-weight: bold;
+  transition: 0.3s;
+}
+header .contianer ul li a:hover {
+  color: var(--primary-color);
+}
+header .contianer i {
+  display: none;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  header .contianer i {
+    display: block;
+  }
+  header .contianer i:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+  }
+  header .contianer ul li {
+    padding: 20px;
+  }
+  header .contianer ul li a {
+    color: var(--white);
+  }
+}
+/* End Header */
+
+/* Start Main Section */
+main .container {
+  width: 90%;
+  height: 100vh;
+  margin: 30px auto;
+  border-radius: 20px;
+  background-image: linear-gradient(
+      to right,
+      rgba(44, 56, 85, 0.9),
+      rgba(100, 125, 187, 0.1)
+    ),
+    url(../images/landing.jpg);
+  background-size: cover;
+  position: relative;
+}
+main .container .intro {
+  position: absolute;
+  left: 5%;
+  top: 20%;
+  color: var(--white);
+}
+@media (max-width: 767px) {
+  main .container .intro {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+  }
+}
+main .container .intro h2 {
+  font-size: 60px;
+}
+main .container .intro p {
+  margin-top: 10px;
+}
+@media (max-width: 767px) {
+  main .container .intro h2 {
+    font-size: 45px;
+  }
+}
+main .container .book {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  padding: 30px;
+  border-radius: 15px;
+}
+@media (max-width: 767px) {
+  main .container .book {
+    flex-direction: column;
+  }
+}
+main .container .book .col {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+@media (max-width: 767px) {
+  main .container .book .col {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+main .container .book .col input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #333;
+  outline: none;
+  padding: 5px;
+  position: relative;
+}
+main .container .book .col label {
+  color: var(--text-dark);
+  font-size: 18px;
+  position: absolute;
+  transition: 0.5s;
+  font-weight: 500;
+}
+main .container .book .col input:focus + label {
+  top: 20px;
+  font-size: 13px;
+}
+main .container .book .col span {
+  font-size: 13px;
+  padding-top: 5px;
+  color: var(--text-light);
+}
+main .container .book .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  background-color: var(--primary-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+main .container .book .icon:hover {
+  background-color: var(--primary-color-dark);
+}
+/* End Main Section */
+
+/* Start hotels section */
+section .hotels {
+  width: 90%;
+  margin: 100px auto;
+}
+section .hotels h2 {
+  margin-bottom: 35px;
+  font-size: 35px;
+  color: var(--text-dark);
+  text-align: center;
+}
+.hotels .hotels-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+.hotels .hotels-content .hotel {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 0 0 10px;
+}
+.hotels .hotel img {
+  width: 100%;
+}
+.hotels .hotels-content .hotel:hover img {
+  opacity: 0.9;
+}
+.hotels .hotel .info {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+.hotels .hotel .info h3 {
+  color: var(--text-dark);
+}
+.hotels .hotel .info span {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 18px;
+}
+.hotels .hotel > span {
+  color: var(--text-light);
+  padding: 10px;
+  font-size: 15px;
+}
+/* End hotels section */
+
+/* Start Clients Section */
+section .clients {
+  background-color: var(--extra-light);
+  padding: 30px 0;
+  text-align: center;
+}
+.clients h2 {
+  margin-bottom: 50px;
+  font-size: 35px;
+  color: var(--text-dark);
+}
+.clients .clients-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  width: 90%;
+  margin: 20px auto;
+}
+.clients .clients-content .client {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  padding: 10px;
+  background-color: var(--white);
+  height: 180px;
+  position: relative;
+}
+@media (max-width: 920px) {
+  .clients .clients-content .client {
+    margin-bottom: 30px;
+  }
+}
+.clients .clients-content img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  outline: 5px solid var(--extra-light);
+  background-color: var(--white);
+  padding: 2px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+.clients .clients-content .client:hover img {
+  top: -40px;
+}
+.clients .clients-content p {
+  color: var(--text-dark);
+  font-size: 18px;
+}
+/* End Clients Section */
+
+/* Start Discount Section */
+section .discount {
+  width: 90%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center;
+}
+section .discount h4 {
+  color: var(--text-light);
+  padding: 20px 0;
+}
+section .discount p {
+  width: 50%;
+  margin: auto;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+section .discount button {
+  padding: 10px 30px;
+  margin: 20px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 600px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+section .discount button:hover {
+  background-color: var(--primary-color-dark);
+}
+/* End Discount Section */
+
+/* Start Footre  */
+footer {
+  margin-top: 30px;
+  background-color: var(--extra-light);
+}
+footer .foot-content {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+@media (max-width: 767px) {
+  footer .foot-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}
+footer .foot-content .col:first-child {
+  width: 30%;
+}
+@media (max-width: 767px) {
+  footer .foot-content .col:first-child {
+    width: 90%;
+    margin: auto;
+  }
+}
+footer .foot-content .col h4 {
+  font-size: 25px;
+  color: var(--text-dark);
+  padding-bottom: 20px;
+}
+footer .foot-content .col p {
+  color: var(--text-light);
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+  cursor: pointer;
+  transition: 0.3s;
+}
+footer .foot-content .col p:hover {
+  color: var(--text-dark);
+}
+footer .foot-content .col ul li {
+  margin-bottom: 15px;
+}
+footer .foot-content .col ul li a {
+  color: var(--text-light);
+  transition: 0.3s;
+}
+footer .foot-content .col ul li a:hover {
+  color: var(--text-dark);
+}
+footer .foot {
+  text-align: right;
+  padding: 0 0 10px;
+}
+@media (max-width: 767px) {
+  footer .foot {
+    text-align: center;
+    padding: 0 0 10px;
+  }
+}
+footer .foot p {
+  font-size: 16px;
+  color: var(--text-light);
+  margin: 30px 20px 20px;
+  position: relative;
+}
+footer .foot p::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 2px;
+  font-weight: 500;
+  background-color: var(--text-light);
+  top: 10px;
+  right: 35%;
+}
+@media (max-width: 920px) {
+  footer .foot p::after {
+    right: 50%;
+  }
+}
+@media (max-width: 767px) {
+  footer .foot p::after {
+    display: none;
+  }
+}
+/* End Footre  */
